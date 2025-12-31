@@ -1,13 +1,33 @@
 <script>
 	const sectionClass = 'my-4 flex gap-[63px]'
 	const subSectionClass = 'max-w-[530px] mt-4 flex flex-col gap-4'
+
+	const github = 'https://github.com/lurnuku'
+	const linkedin = 'https://www.linkedin.com/in/farkamiroslava/'
+	const email = 'farka.miroslava@gmail.com'
+
+	const contactMe = () => {
+		location.href = `mailto:${email}`
+	}
 </script>
 
 <div class="px-15 py-10 text-[21px]">
 	<div class="flex gap-8 justify-end items-center text-[18px]">
-		<p>GitHub</p>
-		<p>LinkedIn</p>
-		<button class="bg-[#407bff] rounded-lg py-0.5 px-6 text-white">
+		<button
+			class="cursor-pointer"
+			type="button"
+			on:click={() => window.open(github, '_blank')}>GitHub</button
+		>
+		<button
+			class="cursor-pointer"
+			type="button"
+			on:click={() => window.open(linkedin, '_blank')}>LinkedIn</button
+		>
+		<button
+			class="bg-[#407bff] cursor-pointer rounded-lg py-0.5 px-6 text-white"
+			type="button"
+			on:click={contactMe}
+		>
 			Contact me
 		</button>
 	</div>
@@ -68,7 +88,7 @@
 					>long-term health of the applications</u
 				>, rather than just making something visually appealing.
 			</p>
-			<p>Do love a good looking website though</p>
+			<p>Do love a good looking website though.</p>
 		</div>
 		<div class={subSectionClass}>
 			<p>
@@ -78,13 +98,12 @@
 				in
 				<u class="decoration-[#407bff] decoration-1"
 					>Theory of Interactive Media</u
-				> at Masaryk University in Brno, an arts-oriented program. That's
-				where I realized I'm more logical than creative.
+				> at Masaryk University in Brno, an arts-oriented program.
 			</p>
 			<p>
-				During that time, I realized I'm little more comfortable with
-				structure and logic than with open-ended creative expression.
-				That realization pushed me toward software rather than design.
+				Realized I'm little more comfortable with structure and logic
+				than with open-ended creative expression. That realization
+				pushed me toward software rather than design.
 			</p>
 			<p>
 				And here I am now, doing mostly frontend, but slowly going for
@@ -121,10 +140,10 @@
 		</div>
 	</div>
 
-	<div class={`${sectionClass} items-end text-[18px] mt-18`}>
+	<div class={`${sectionClass} items-end text-[18px] mt-26`}>
 		<div class="flex w-[530px] gap-8">
 			<p>Brno, Czech Republic</p>
-			<p>farka.miroslava@gmail.com</p>
+			<p>{email}</p>
 		</div>
 		<div class="flex gap-8">
 			<p>© 2025 Miroslava Farkašová. All rights reserved.</p>
