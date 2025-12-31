@@ -18,6 +18,8 @@
 	}
 
 	:global(html) {
+		font-family: 'OverusedGrotesk-Light', sans-serif;
+
 		scrollbar-color: #407bff white;
 		scrollbar-width: thin;
 	}

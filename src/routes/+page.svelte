@@ -1,30 +1,45 @@
-<div class="px-15 py-10">
-	<div class="flex gap-6 justify-end items-center text-lg">
+<script>
+	const sectionClass = 'my-4 flex gap-[63px]'
+	const subSectionClass = 'max-w-[530px] mt-4 flex flex-col gap-4'
+</script>
+
+<div class="px-15 py-10 text-[21px]">
+	<div class="flex gap-8 justify-end items-center text-[18px]">
 		<p>GitHub</p>
 		<p>LinkedIn</p>
-		<button class="bg-[#407bff] rounded-lg py-0.5 px-6 text-white"
-			>Contact me</button
-		>
+		<button class="bg-[#407bff] rounded-lg py-0.5 px-6 text-white">
+			Contact me
+		</button>
 	</div>
-	<div class="mb-6">
+
+	<div class="mb-8">
 		<h1 class="text-[51px] -mb-6">Hello I am</h1>
-		<div class="flex gap-4 -ml-4 -mb-2">
-			<img
-				src="/src/lib/assets/images/first_name.svg"
-				alt="First Name"
-				width="500"
-			/>
-			<img
-				src="/src/lib/assets/images/last_name.svg"
-				alt="Last Name"
-				width="900"
-			/>
+		<div class="flex gap-8 -ml-4 -mr-7">
+			<div class="hidden md:block w-full">
+				<img
+					src="/src/lib/assets/images/full_name.svg"
+					alt="Full Name"
+				/>
+			</div>
+			<div class="md:hidden flex flex-col gap-8 w-full">
+				<img
+					src="/src/lib/assets/images/first_name.svg"
+					alt="First Name"
+				/>
+				<img
+					src="/src/lib/assets/images/last_name.svg"
+					alt="Last Name"
+				/>
+			</div>
 		</div>
+
 		<h1 class="text-[51px]">React & TypeScript Developer</h1>
 	</div>
+
 	<hr />
-	<div class="mt-4 flex justify-between gap-[63px]">
-		<div class="max-w-[530px]">
+
+	<div class={`${sectionClass} mb-12`}>
+		<div class="w-[530px]">
 			<h1 class="text-[48px]">
 				Currently working as a
 				<span class="bg-[#407bff] rounded-lg px-2 text-white">
@@ -33,49 +48,94 @@
 				developer at Mergado
 			</h1>
 		</div>
-		<div class="max-w-[530px] mt-4 flex flex-col gap-4">
-			<p>I have got ...</p>
+		<div class={subSectionClass}>
 			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
-				nemo ex nulla at harum, quasi ipsa sapiente atque tempora
-				aliquam veritatis facilis cumque rerum quas maiores praesentium
-				minus sint in.
+				<u class="decoration-[#407bff] decoration-1"
+					>Got 2+ years of professional experience</u
+				>
+				maintaining a codebase that (mostly) survives my semicolon-free lifestyle.
+			</p>
+			<p>
+				<u class="decoration-[#407bff] decoration-1"
+					>Prefer building web-based applications</u
+				> that actually do things, rather than websites that just look pretty.
+			</p>
+			<p>
+				Spend my days designing features, handling edge cases, and
+				maintaining systems that are used daily by customers. I care
+				about the quality of the code and the
+				<u class="decoration-[#407bff] decoration-1"
+					>long-term health of the applications</u
+				>, rather than just making something visually appealing.
+			</p>
+			<p>Do love a good looking website though</p>
+		</div>
+		<div class={subSectionClass}>
+			<p>
+				Got a <u class="decoration-[#407bff] decoration-1"
+					>Master's degree</u
+				>
+				in
+				<u class="decoration-[#407bff] decoration-1"
+					>Theory of Interactive Media</u
+				> at Masaryk University in Brno, an arts-oriented program. That's
+				where I realized I'm more logical than creative.
+			</p>
+			<p>
+				During that time, I realized I'm little more comfortable with
+				structure and logic than with open-ended creative expression.
+				That realization pushed me toward software rather than design.
+			</p>
+			<p>
+				And here I am now, doing mostly frontend, but slowly going for
+				fullstack.
 			</p>
 		</div>
-		<div class="max-w-[530px] mt-4 flex flex-col gap-4">
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet
-				nemo ex nulla at harum, quasi ipsa sapiente atque tempora
-				aliquam veritatis facilis cumque rerum quas maiores praesentium
-				minus sint in.
-			</p>
+	</div>
+
+	<hr />
+
+	<div class={sectionClass}>
+		<div class="w-[530px]">
+			<h1 class="text-[48px]">The stack I live in</h1>
+		</div>
+		<div class={`flex items-center gap-8`}>
+			<p>React</p>
+			<p>Redux</p>
+			<p>TypeScript</p>
+			<p>Tailwind CSS</p>
+			<p>Docker</p>
 		</div>
 	</div>
+
 	<hr />
-	<div>
-		<h1 class="text-[48px]">Toolbox</h1>
-		<p>React, TypeScript, Svelte, Tailwind CSS, Node.js</p>
+
+	<div class={sectionClass}>
+		<div class="w-[530px]">
+			<h1 class="text-[48px]">Side tools</h1>
+		</div>
+		<div class={`flex items-center gap-8`}>
+			<p>Svelte</p>
+			<p>C++</p>
+			<p>Golang</p>
+		</div>
 	</div>
-	<hr />
-	<div>
-		<h1 class="text-[48px]">For funzies</h1>
-		<p>Svelte</p>
-	</div>
-	<div>
-		<p>Brno</p>
-		<p>meal</p>
-		<p>ciopyright</p>
-		<p>desing</p>
-		<img
-			src="/src/lib/assets/images/doggo.svg"
-			alt="Blue dog"
-			width="200"
-		/>
+
+	<div class={`${sectionClass} items-end text-[18px] mt-18`}>
+		<div class="flex w-[530px] gap-8">
+			<p>Brno, Czech Republic</p>
+			<p>farka.miroslava@gmail.com</p>
+		</div>
+		<div class="flex gap-8">
+			<p>© 2025 Miroslava Farkašová. All rights reserved.</p>
+			<p>Design by Barbora Kunzová</p>
+		</div>
+		<div class="ml-auto">
+			<img
+				src="/src/lib/assets/images/doggo.svg"
+				alt="Blue dog"
+				width="200"
+			/>
+		</div>
 	</div>
 </div>
-
-<style>
-	* {
-		font-family: 'OverusedGrotesk-Light', sans-serif;
-	}
-</style>
