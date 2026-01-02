@@ -22,5 +22,7 @@
 
 		scrollbar-color: #407bff white;
 		scrollbar-width: thin;
+
+		cursor: none;
 	}
 </style>

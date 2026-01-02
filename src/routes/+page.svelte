@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	const sectionClass = 'my-4 flex gap-[63px]'
 	const subSectionClass = 'max-w-[530px] mt-4 flex flex-col gap-4'
 
@@ -9,6 +9,27 @@
 	const contactMe = () => {
 		location.href = `mailto:${email}`
 	}
+
+	const cursorSize = 36
+	let mouseX = $state(0)
+	let mouseY = $state(0)
+	let isHovering = $state(false)
+	let containerRef: HTMLDivElement
+
+	const handleMouseMove = (e: MouseEvent) => {
+		if (!containerRef) return
+		const rect = containerRef.getBoundingClientRect()
+		mouseX = e.clientX - rect.left
+		mouseY = e.clientY - rect.top
+	}
+
+	const handleMouseEnter = () => {
+		isHovering = true
+	}
+
+	const handleMouseLeave = () => {
+		isHovering = false
+	}
 </script>
 
 <div class="px-15 py-10 text-[21px]">
@@ -16,17 +37,17 @@
 		<button
 			class="cursor-pointer"
 			type="button"
-			on:click={() => window.open(github, '_blank')}>GitHub</button
+			onclick={() => window.open(github, '_blank')}>GitHub</button
 		>
 		<button
 			class="cursor-pointer"
 			type="button"
-			on:click={() => window.open(linkedin, '_blank')}>LinkedIn</button
+			onclick={() => window.open(linkedin, '_blank')}>LinkedIn</button
 		>
 		<button
 			class="bg-[#407bff] cursor-pointer rounded-lg py-0.5 px-6 text-white"
 			type="button"
-			on:click={contactMe}
+			onclick={contactMe}
 		>
 			Contact me
 		</button>
@@ -36,10 +57,30 @@
 		<h1 class="text-[51px] -mb-6">Hello I am</h1>
 		<div class="flex gap-8 -ml-4 -mr-7">
 			<div class="hidden md:block w-full">
-				<img
-					src="/src/lib/assets/images/full_name.svg"
-					alt="Full Name"
-				/>
+				<div
+					bind:this={containerRef}
+					class="relative"
+					onmousemove={handleMouseMove}
+					onmouseenter={handleMouseEnter}
+					onmouseleave={handleMouseLeave}
+					role="img"
+					aria-label="Full Name"
+				>
+					<img
+						src="/src/lib/assets/images/full_name.svg"
+						alt="Full Name"
+						class="relative z-10"
+					/>
+					<img
+						src="/src/lib/assets/images/full_name_green.svg"
+						alt="Full Name Green"
+						class="absolute top-0 left-0 z-20 transition-opacity duration-300"
+						style="
+							clip-path: circle({cursorSize}px at {mouseX}px {mouseY}px);
+							opacity: {isHovering ? 1 : 0};
+						"
+					/>
+				</div>
 			</div>
 			<div class="md:hidden flex flex-col gap-8 w-full">
 				<img
@@ -73,7 +114,8 @@
 				<u class="decoration-[#407bff] decoration-1"
 					>Got 2+ years of professional experience</u
 				>
-				maintaining a codebase that (mostly) survives my semicolon-free lifestyle.
+				maintaining a codebase that (mostly) survives my semicolon-free JS
+				lifestyle.
 			</p>
 			<p>
 				<u class="decoration-[#407bff] decoration-1"
