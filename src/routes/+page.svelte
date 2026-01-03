@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { createSpotlightCursor } from '../utils/createSpotlightCursor.svelte.ts'
+
 	const sectionClass = 'my-2 flex gap-[63px]'
 	const subSectionClass = 'max-w-[530px] mt-2 flex flex-col gap-3'
 
@@ -10,26 +12,8 @@
 		location.href = `mailto:${email}`
 	}
 
-	const cursorSize = 36
-	let mouseX = $state(0)
-	let mouseY = $state(0)
-	let isHovering = $state(false)
-	let containerRef: HTMLDivElement
-
-	const handleMouseMove = (e: MouseEvent) => {
-		if (!containerRef) return
-		const rect = containerRef.getBoundingClientRect()
-		mouseX = e.clientX - rect.left
-		mouseY = e.clientY - rect.top
-	}
-
-	const handleMouseEnter = () => {
-		isHovering = true
-	}
-
-	const handleMouseLeave = () => {
-		isHovering = false
-	}
+	const spotlight1 = createSpotlightCursor(36)
+	const spotlight2 = createSpotlightCursor(36)
 </script>
 
 <div class="px-15 py-6 text-[18px] leading-tight">
@@ -58,11 +42,11 @@
 		<div class="flex gap-8 -ml-4 -mr-7 mt-2">
 			<div class="hidden md:block w-full">
 				<div
-					bind:this={containerRef}
+					bind:this={spotlight1.containerRef}
 					class="relative"
-					onmousemove={handleMouseMove}
-					onmouseenter={handleMouseEnter}
-					onmouseleave={handleMouseLeave}
+					onmousemove={spotlight1.handleMouseMove}
+					onmouseenter={spotlight1.handleMouseEnter}
+					onmouseleave={spotlight1.handleMouseLeave}
 					role="img"
 					aria-label="Full Name"
 				>
@@ -76,8 +60,8 @@
 						alt="Full Name Green"
 						class="absolute top-0 left-0 z-20 transition-opacity duration-300"
 						style="
-							clip-path: circle({cursorSize}px at {mouseX}px {mouseY}px);
-							opacity: {isHovering ? 1 : 0};
+							clip-path: circle({spotlight1.cursorSize}px at {spotlight1.mouseX}px {spotlight1.mouseY}px);
+							opacity: {spotlight1.isHovering ? 1 : 0};
 						"
 					/>
 				</div>
@@ -192,11 +176,31 @@
 			<p>Design by Barbora Kunzová</p>
 		</div>
 		<div class="ml-auto">
-			<img
-				src="/src/lib/assets/images/doggo.svg"
-				alt="Blue dog"
-				width="200"
-			/>
+			<div
+				bind:this={spotlight2.containerRef}
+				class="relative"
+				onmousemove={spotlight2.handleMouseMove}
+				onmouseenter={spotlight2.handleMouseEnter}
+				onmouseleave={spotlight2.handleMouseLeave}
+				role="img"
+				aria-label="Dog"
+			>
+				<img
+					src="/src/lib/assets/images/doggo.svg"
+					alt="Blue dog"
+					width="200"
+				/>
+				<img
+					src="/src/lib/assets/images/doggo_green.svg"
+					alt="Blue dog"
+					width="200"
+					class="absolute top-0 left-0 z-20 transition-opacity duration-300"
+					style="
+							clip-path: circle({spotlight2.cursorSize}px at {spotlight2.mouseX}px {spotlight2.mouseY}px);
+							opacity: {spotlight2.isHovering ? 1 : 0};
+						"
+				/>
+			</div>
 		</div>
 	</div>
 </div>
