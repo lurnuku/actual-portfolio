@@ -1,6 +1,6 @@
 <script lang="ts">
-	const sectionClass = 'my-4 flex gap-[63px]'
-	const subSectionClass = 'max-w-[530px] mt-4 flex flex-col gap-4'
+	const sectionClass = 'my-2 flex gap-[63px]'
+	const subSectionClass = 'max-w-[530px] mt-2 flex flex-col gap-3'
 
 	const github = 'https://github.com/lurnuku'
 	const linkedin = 'https://www.linkedin.com/in/farkamiroslava/'
@@ -32,8 +32,8 @@
 	}
 </script>
 
-<div class="px-15 py-10 text-[21px]">
-	<div class="flex gap-8 justify-end items-center text-[18px]">
+<div class="px-15 py-6 text-[18px] leading-tight">
+	<div class="flex gap-8 justify-end items-center text-[16px] mb-4">
 		<button
 			class="cursor-pointer"
 			type="button"
@@ -53,9 +53,9 @@
 		</button>
 	</div>
 
-	<div class="mb-8">
-		<h1 class="text-[51px] -mb-6">Hello I am</h1>
-		<div class="flex gap-8 -ml-4 -mr-7">
+	<div class="mb-6">
+		<h1 class="text-[48px] -mb-6">Hello I am</h1>
+		<div class="flex gap-8 -ml-4 -mr-7 mt-2">
 			<div class="hidden md:block w-full">
 				<div
 					bind:this={containerRef}
@@ -82,7 +82,7 @@
 					/>
 				</div>
 			</div>
-			<div class="md:hidden flex flex-col gap-8 w-full">
+			<div class="md:hidden flex flex-col gap-6 w-full">
 				<img
 					src="/src/lib/assets/images/first_name.svg"
 					alt="First Name"
@@ -94,16 +94,18 @@
 			</div>
 		</div>
 
-		<h1 class="text-[51px]">React & TypeScript Developer</h1>
+		<h1 class="text-[48px] mt-2">React & TypeScript Developer</h1>
 	</div>
 
-	<hr />
+	<hr class="my-4" />
 
-	<div class={`${sectionClass} mb-12`}>
+	<div class={`${sectionClass} mb-8`}>
 		<div class="w-[530px]">
-			<h1 class="text-[48px]">
+			<h1 class="text-[45px]">
 				Currently working as a
-				<span class="bg-[#407bff] rounded-lg px-2 text-white">
+				<span
+					class="bg-[#407bff] rounded-lg px-2 text-white whitespace-nowrap"
+				>
 					front-end
 				</span>
 				developer at Mergado
@@ -111,22 +113,20 @@
 		</div>
 		<div class={subSectionClass}>
 			<p>
-				<u class="decoration-[#407bff] decoration-1"
+				<u class="decoration-black decoration-1"
 					>Got 2+ years of professional experience</u
 				>
 				maintaining a codebase that (mostly) survives my semicolon-free JS
 				lifestyle.
 			</p>
 			<p>
-				<u class="decoration-[#407bff] decoration-1"
+				<u class="decoration-black decoration-1"
 					>Prefer building web-based applications</u
 				> that actually do things, rather than websites that just look pretty.
 			</p>
 			<p>
-				Spend my days designing features, handling edge cases, and
-				maintaining systems that are used daily by customers. I care
-				about the quality of the code and the
-				<u class="decoration-[#407bff] decoration-1"
+				I care about the quality of the code and the
+				<u class="decoration-black decoration-1"
 					>long-term health of the applications</u
 				>, rather than just making something visually appealing.
 			</p>
@@ -134,11 +134,11 @@
 		</div>
 		<div class={subSectionClass}>
 			<p>
-				Got a <u class="decoration-[#407bff] decoration-1"
+				Got a <u class="decoration-black decoration-1"
 					>Master's degree</u
 				>
 				in
-				<u class="decoration-[#407bff] decoration-1"
+				<u class="decoration-black decoration-1"
 					>Theory of Interactive Media</u
 				> at Masaryk University in Brno, an arts-oriented program.
 			</p>
@@ -154,13 +154,13 @@
 		</div>
 	</div>
 
-	<hr />
+	<hr class="my-4" />
 
 	<div class={sectionClass}>
 		<div class="w-[530px]">
-			<h1 class="text-[48px]">The stack I live in</h1>
+			<h1 class="text-[45px]">The stack I live in</h1>
 		</div>
-		<div class={`flex items-center gap-8`}>
+		<div class="flex items-center gap-8">
 			<p>React</p>
 			<p>Redux</p>
 			<p>TypeScript</p>
@@ -169,20 +169,20 @@
 		</div>
 	</div>
 
-	<hr />
+	<hr class="my-4" />
 
 	<div class={sectionClass}>
 		<div class="w-[530px]">
-			<h1 class="text-[48px]">Side tools</h1>
+			<h1 class="text-[45px]">Side tools</h1>
 		</div>
-		<div class={`flex items-center gap-8`}>
+		<div class="flex items-center gap-8">
 			<p>Svelte</p>
 			<p>C++</p>
 			<p>Golang</p>
 		</div>
 	</div>
 
-	<div class={`${sectionClass} items-end text-[18px] mt-26`}>
+	<div class={`${sectionClass} items-end text-[16px] mt-32`}>
 		<div class="flex w-[530px] gap-8">
 			<p>Brno, Czech Republic</p>
 			<p>{email}</p>
