@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { createSpotlightCursor } from '../utils/createSpotlightCursor.svelte.ts'
 
-	const sectionClass = 'my-2 flex gap-[63px]'
-	const subSectionClass = 'max-w-[530px] mt-2 flex flex-col gap-3'
-
 	const github = 'https://github.com/lurnuku'
 	const linkedin = 'https://www.linkedin.com/in/farkamiroslava/'
 	const email = 'farka.miroslava@gmail.com'
@@ -14,22 +11,82 @@
 
 	const spotlight1 = createSpotlightCursor(36)
 	const spotlight2 = createSpotlightCursor(36)
+
+	let coords = $state({ x: 0, y: 0 })
+	let cursorSize = $state(10)
+	let hideCursor = $state(false)
+	let devToolsOpen = $state(false)
+
+	$effect(() => {
+		const threshold = 160
+
+		const checkDevTools = () => {
+			const widthThreshold =
+				window.outerWidth - window.innerWidth > threshold
+			const heightThreshold =
+				window.outerHeight - window.innerHeight > threshold
+			devToolsOpen = widthThreshold || heightThreshold
+
+			if (devToolsOpen) {
+				document.documentElement.classList.add('devtools-open')
+			} else {
+				document.documentElement.classList.remove('devtools-open')
+			}
+		}
+
+		checkDevTools()
+		window.addEventListener('resize', checkDevTools)
+		return () => window.removeEventListener('resize', checkDevTools)
+	})
+
+	const sectionClass = 'my-2 flex gap-[63px]'
+	const subSectionClass = 'max-w-[530px] mt-2 flex flex-col gap-3'
 </script>
+
+<svelte:window
+	onmousemove={(e) => {
+		coords = { x: e.clientX, y: e.clientY }
+
+		const target = e.target as HTMLElement
+		hideCursor =
+			spotlight1.containerRef?.contains(target) ||
+			spotlight2.containerRef?.contains(target) ||
+			false
+	}}
+	onmousedown={(e) => {
+		cursorSize = 30
+	}}
+	onmouseup={(e) => {
+		cursorSize = 10
+	}}
+/>
+
+<svg
+	class="w-full h-full"
+	style="opacity: {hideCursor || devToolsOpen
+		? 0
+		: 1}; transition: opacity 0.2s;"
+>
+	<circle
+		cx={coords.x}
+		cy={coords.y}
+		r={cursorSize}
+		fill="#407bff"
+		fill-opacity="1"
+		style="transition: r 0.15s ease-out;"
+	/>
+</svg>
 
 <div class="px-15 py-6 text-[18px] leading-tight">
 	<div class="flex gap-8 justify-end items-center text-[16px] mb-4">
-		<button
-			class="cursor-pointer"
-			type="button"
-			onclick={() => window.open(github, '_blank')}>GitHub</button
+		<button type="button" onclick={() => window.open(github, '_blank')}
+			>GitHub</button
+		>
+		<button type="button" onclick={() => window.open(linkedin, '_blank')}
+			>LinkedIn</button
 		>
 		<button
-			class="cursor-pointer"
-			type="button"
-			onclick={() => window.open(linkedin, '_blank')}>LinkedIn</button
-		>
-		<button
-			class="bg-[#407bff] cursor-pointer rounded-lg py-0.5 px-6 text-white"
+			class="bg-[#407bff] rounded-lg py-1.5 px-6 text-white"
 			type="button"
 			onclick={contactMe}
 		>
@@ -109,7 +166,7 @@
 				> that actually do things, rather than websites that just look pretty.
 			</p>
 			<p>
-				I care about the quality of the code and the
+				Care about the quality of the code and the
 				<u class="decoration-black decoration-1"
 					>long-term health of the applications</u
 				>, rather than just making something visually appealing.
@@ -204,3 +261,19 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	svg {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 9999;
+	}
+
+	::selection {
+		background: #14ed99;
+	}
+</style>

@@ -20,9 +20,13 @@
 	:global(html) {
 		font-family: 'OverusedGrotesk-Light', sans-serif;
 
+		background-color: #faf0e6;
+
 		scrollbar-color: #407bff white;
 		scrollbar-width: thin;
+	}
 
+	:global(html:not(.devtools-open)) {
 		cursor: none;
 	}
 </style>
