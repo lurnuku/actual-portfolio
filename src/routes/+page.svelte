@@ -39,8 +39,7 @@
 		return () => window.removeEventListener('resize', checkDevTools)
 	})
 
-	const sectionClass = 'my-2 flex gap-[63px]'
-	const subSectionClass = 'max-w-[530px] mt-2 flex flex-col gap-3'
+	const subSectionClass = 'w-[530px] max-w-[530px] mt-2 flex flex-col gap-3'
 </script>
 
 <svelte:window
@@ -93,7 +92,6 @@
 			Contact me
 		</button>
 	</div>
-
 	<div class="mb-6">
 		<h1 class="text-[48px] -mb-6">Hello I am</h1>
 		<div class="flex gap-8 -ml-4 -mr-7 mt-2">
@@ -134,14 +132,11 @@
 				/>
 			</div>
 		</div>
-
 		<h1 class="text-[48px] mt-2">React & TypeScript Developer</h1>
 	</div>
-
 	<hr class="my-4" />
-
-	<div class={`${sectionClass} mb-8`}>
-		<div class="w-[530px]">
+	<div class="grid grid-cols-12 grid-rows-4 gap-4">
+		<div class="col-span-4">
 			<h1 class="text-[45px]">
 				Currently working as a
 				<span
@@ -152,7 +147,7 @@
 				developer at Mergado
 			</h1>
 		</div>
-		<div class={subSectionClass}>
+		<div class="col-span-4 col-start-5">
 			<p>
 				<u class="decoration-black decoration-1"
 					>Got 2+ years of professional experience</u
@@ -173,7 +168,7 @@
 			</p>
 			<p>Do love a good looking website though.</p>
 		</div>
-		<div class={subSectionClass}>
+		<div class="col-span-4 col-start-9">
 			<p>
 				Got a <u class="decoration-black decoration-1"
 					>Master's degree</u
@@ -193,46 +188,37 @@
 				fullstack.
 			</p>
 		</div>
-	</div>
-
-	<hr class="my-4" />
-
-	<div class={sectionClass}>
-		<div class="w-[530px]">
+		<hr class="my-4" />
+		<div class="col-span-4 row-start-2">
 			<h1 class="text-[45px]">The stack I live in</h1>
 		</div>
-		<div class="flex items-center gap-8">
+		<div class="col-span-4 col-start-5 row-start-2">
 			<p>React</p>
 			<p>Redux</p>
 			<p>TypeScript</p>
 			<p>Tailwind CSS</p>
 			<p>Docker</p>
 		</div>
-	</div>
-
-	<hr class="my-4" />
-
-	<div class={sectionClass}>
-		<div class="w-[530px]">
+		<div class="col-span-4 col-start-9 row-start-2"></div>
+		<hr class="my-4" />
+		<div class="col-span-4 row-start-3">
 			<h1 class="text-[45px]">Side tools</h1>
 		</div>
-		<div class="flex items-center gap-8">
+		<div class="col-span-4 col-start-5 row-start-3">
 			<p>Svelte</p>
 			<p>C++</p>
 			<p>Golang</p>
 		</div>
-	</div>
-
-	<div class={`${sectionClass} items-end text-[16px] mt-32`}>
-		<div class="flex w-[530px] gap-8">
+		<div class="col-span-4 col-start-9 row-start-3"></div>
+		<div class="col-span-2 row-start-4">
 			<p>Brno, Czech Republic</p>
 			<p>{email}</p>
 		</div>
-		<div class="flex gap-8">
+		<div class="col-span-2 col-start-6 row-start-4">
 			<p>© 2025 Miroslava Farkašová. All rights reserved.</p>
 			<p>Design by Barbora Kunzová</p>
 		</div>
-		<div class="ml-auto">
+		<div class="col-span-2 col-start-11 row-start-4">
 			<div
 				bind:this={spotlight2.containerRef}
 				class="relative"
