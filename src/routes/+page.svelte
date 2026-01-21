@@ -38,8 +38,6 @@
 		window.addEventListener('resize', checkDevTools)
 		return () => window.removeEventListener('resize', checkDevTools)
 	})
-
-	const subSectionClass = 'w-[530px] max-w-[530px] mt-2 flex flex-col gap-3'
 </script>
 
 <svelte:window
@@ -78,12 +76,12 @@
 
 <div class="px-15 py-6 text-[18px] leading-tight">
 	<div class="flex gap-8 justify-end items-center text-[16px] mb-4">
-		<button type="button" onclick={() => window.open(github, '_blank')}
-			>GitHub</button
-		>
-		<button type="button" onclick={() => window.open(linkedin, '_blank')}
-			>LinkedIn</button
-		>
+		<button type="button" onclick={() => window.open(github, '_blank')}>
+			GitHub
+		</button>
+		<button type="button" onclick={() => window.open(linkedin, '_blank')}>
+			LinkedIn
+		</button>
 		<button
 			class="bg-[#407bff] rounded-lg py-1.5 px-6 text-white"
 			type="button"
@@ -134,91 +132,103 @@
 		</div>
 		<h1 class="text-[48px] mt-2">React & TypeScript Developer</h1>
 	</div>
-	<hr class="my-4" />
-	<div class="grid grid-cols-12 grid-rows-4 gap-4">
-		<div class="col-span-4">
-			<h1 class="text-[45px]">
-				Currently working as a
-				<span
-					class="bg-[#407bff] rounded-lg px-2 text-white whitespace-nowrap"
-				>
-					front-end
-				</span>
-				developer at Mergado
-			</h1>
+	<section class="pb-8 border-t pt-8">
+		<div class="grid grid-cols-12 gap-20">
+			<div class="col-span-4">
+				<h1 class="text-[45px]">
+					Currently working as a
+					<span
+						class="bg-[#407bff] rounded-lg px-2 text-white whitespace-nowrap"
+					>
+						front-end
+					</span>
+					developer at Mergado
+				</h1>
+			</div>
+			<div class="col-span-4 col-start-5 flex flex-col gap-4">
+				<p>
+					<u class="decoration-black decoration-1">
+						Got 2+ years of professional experience
+					</u>
+					maintaining a codebase that (mostly) survives my semicolon-free
+					JS lifestyle.
+				</p>
+				<p>
+					<u class="decoration-black decoration-1">
+						Prefer building web-based applications
+					</u>
+					that actually do things, rather than websites that just look
+					pretty.
+				</p>
+				<p>
+					Care about the quality of the code and the
+					<u class="decoration-black decoration-1">
+						long-term health of the applications
+					</u>
+					, rather than just making something visually appealing.
+				</p>
+				<p>Do love a good looking website though.</p>
+			</div>
+			<div class="col-span-4 col-start-9 flex flex-col gap-4">
+				<p>
+					Got a
+					<u class="decoration-black decoration-1">Master's degree</u>
+					in
+					<u class="decoration-black decoration-1">
+						Theory of Interactive Media
+					</u>
+					at Masaryk University in Brno, an arts-oriented program.
+				</p>
+				<p>
+					Realized I'm little more comfortable with structure and
+					logic than with open-ended creative expression. That
+					realization pushed me toward software rather than design.
+				</p>
+				<p>
+					And here I am now, doing mostly frontend, but slowly going
+					for fullstack.
+				</p>
+			</div>
 		</div>
-		<div class="col-span-4 col-start-5">
-			<p>
-				<u class="decoration-black decoration-1"
-					>Got 2+ years of professional experience</u
-				>
-				maintaining a codebase that (mostly) survives my semicolon-free JS
-				lifestyle.
-			</p>
-			<p>
-				<u class="decoration-black decoration-1"
-					>Prefer building web-based applications</u
-				> that actually do things, rather than websites that just look pretty.
-			</p>
-			<p>
-				Care about the quality of the code and the
-				<u class="decoration-black decoration-1"
-					>long-term health of the applications</u
-				>, rather than just making something visually appealing.
-			</p>
-			<p>Do love a good looking website though.</p>
+	</section>
+	<section class="pb-8 border-t pt-8">
+		<div class="grid grid-cols-12 gap-20">
+			<div class="col-span-4">
+				<h1 class="text-[45px]">The stack I live in</h1>
+			</div>
+			<div class="col-span-4 col-start-5 flex items-center gap-4">
+				<p>React</p>
+				<p>Redux</p>
+				<p>TypeScript</p>
+				<p>Tailwind CSS</p>
+				<p>Docker</p>
+			</div>
+			<div class="col-span-4 col-start-9"></div>
 		</div>
-		<div class="col-span-4 col-start-9">
-			<p>
-				Got a <u class="decoration-black decoration-1"
-					>Master's degree</u
-				>
-				in
-				<u class="decoration-black decoration-1"
-					>Theory of Interactive Media</u
-				> at Masaryk University in Brno, an arts-oriented program.
-			</p>
-			<p>
-				Realized I'm little more comfortable with structure and logic
-				than with open-ended creative expression. That realization
-				pushed me toward software rather than design.
-			</p>
-			<p>
-				And here I am now, doing mostly frontend, but slowly going for
-				fullstack.
-			</p>
+	</section>
+	<section class="pb-8 border-t pt-8">
+		<div class="grid grid-cols-12 gap-20">
+			<div class="col-span-4">
+				<h1 class="text-[45px]">Side tools</h1>
+			</div>
+			<div class="col-span-4 col-start-5 flex items-center gap-4">
+				<p>Svelte</p>
+				<p>C++</p>
+				<p>Golang</p>
+			</div>
+			<div class="col-span-4 col-start-9"></div>
 		</div>
-		<hr class="my-4" />
-		<div class="col-span-4 row-start-2">
-			<h1 class="text-[45px]">The stack I live in</h1>
-		</div>
-		<div class="col-span-4 col-start-5 row-start-2">
-			<p>React</p>
-			<p>Redux</p>
-			<p>TypeScript</p>
-			<p>Tailwind CSS</p>
-			<p>Docker</p>
-		</div>
-		<div class="col-span-4 col-start-9 row-start-2"></div>
-		<hr class="my-4" />
-		<div class="col-span-4 row-start-3">
-			<h1 class="text-[45px]">Side tools</h1>
-		</div>
-		<div class="col-span-4 col-start-5 row-start-3">
-			<p>Svelte</p>
-			<p>C++</p>
-			<p>Golang</p>
-		</div>
-		<div class="col-span-4 col-start-9 row-start-3"></div>
-		<div class="col-span-2 row-start-4">
+	</section>
+	<div class="grid grid-cols-12 gap-20">
+		<div class="col-span-4 flex gap-6 items-end">
 			<p>Brno, Czech Republic</p>
 			<p>{email}</p>
 		</div>
-		<div class="col-span-2 col-start-6 row-start-4">
+		<div class="col-span-5 col-start-5 flex gap-6 items-end justify-center">
 			<p>© 2025 Miroslava Farkašová. All rights reserved.</p>
 			<p>Design by Barbora Kunzová</p>
 		</div>
-		<div class="col-span-2 col-start-11 row-start-4">
+		<div class="col-span-3 col-start-12 flex gap-66 items-end">
 			<div
 				bind:this={spotlight2.containerRef}
 				class="relative"
@@ -239,9 +249,9 @@
 					width="200"
 					class="absolute top-0 left-0 z-20 transition-opacity duration-300"
 					style="
-							clip-path: circle({spotlight2.cursorSize}px at {spotlight2.mouseX}px {spotlight2.mouseY}px);
-							opacity: {spotlight2.isHovering ? 1 : 0};
-						"
+						clip-path: circle({spotlight2.cursorSize}px at {spotlight2.mouseX}px {spotlight2.mouseY}px);
+						opacity: {spotlight2.isHovering ? 1 : 0};
+					"
 				/>
 			</div>
 		</div>
