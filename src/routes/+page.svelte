@@ -1,39 +1,31 @@
 <script lang="ts">
 	import { createSpotlightCursor } from '../utils/createSpotlightCursor.svelte.ts'
-
 	const github = 'https://github.com/lurnuku'
 	const linkedin = 'https://www.linkedin.com/in/farkamiroslava/'
 	const email = 'farka.miroslava@gmail.com'
-
 	const contactMe = () => {
 		location.href = `mailto:${email}`
 	}
-
 	const spotlight1 = createSpotlightCursor(36)
 	const spotlight2 = createSpotlightCursor(36)
-
 	let coords = $state({ x: 0, y: 0 })
 	let cursorSize = $state(10)
 	let hideCursor = $state(false)
 	let devToolsOpen = $state(false)
-
 	$effect(() => {
 		const threshold = 160
-
 		const checkDevTools = () => {
 			const widthThreshold =
 				window.outerWidth - window.innerWidth > threshold
 			const heightThreshold =
 				window.outerHeight - window.innerHeight > threshold
 			devToolsOpen = widthThreshold || heightThreshold
-
 			if (devToolsOpen) {
 				document.documentElement.classList.add('devtools-open')
 			} else {
 				document.documentElement.classList.remove('devtools-open')
 			}
 		}
-
 		checkDevTools()
 		window.addEventListener('resize', checkDevTools)
 		return () => window.removeEventListener('resize', checkDevTools)
@@ -43,7 +35,6 @@
 <svelte:window
 	onmousemove={(e) => {
 		coords = { x: e.clientX, y: e.clientY }
-
 		const target = e.target as HTMLElement
 		hideCursor =
 			spotlight1.containerRef?.contains(target) ||
@@ -57,7 +48,6 @@
 		cursorSize = 10
 	}}
 />
-
 <svg
 	class="w-full h-full"
 	style="opacity: {hideCursor || devToolsOpen
@@ -73,7 +63,6 @@
 		style="transition: r 0.15s ease-out;"
 	/>
 </svg>
-
 <div class="px-15 py-6 text-[18px] leading-tight">
 	<div
 		class="flex gap-6 sm:gap-8 flex-wrap sm:flex-nowrap justify-center sm:justify-end items-center text-[16px] mb-4"
@@ -159,23 +148,27 @@
 						Got 2+ years of professional experience
 					</u>
 					maintaining a codebase that (mostly) survives my semicolon-free
-					JS lifestyle.
+					lifestyle.
 				</p>
 				<p>
 					<u class="decoration-black decoration-1">
-						Prefer building web-based applications
+						Prefer building web-based applications.
 					</u>
-					that actually do things, rather than websites that just look
-					pretty.
 				</p>
 				<p>
-					Care about the quality of the code and the
-					<u class="decoration-black decoration-1">
-						long-term health of the applications
-					</u>
-					, rather than just making something visually appealing.
+					Care about the quality of the code and the long-term health
+					of the applications, but also making them visually
+					appealing.
 				</p>
-				<p>Do love a good looking website though.</p>
+				<p>
+					Fun fact is that I also like writing documentation and I
+					will refactor anything that bothers me.
+				</p>
+				<p>
+					Slowly <u class="decoration-black decoration-1"
+						>making the move to fullstack</u
+					> to understand the complete picture.
+				</p>
 			</div>
 			<div
 				class="row-span-4 row-start-9 sm:row-span-auto sm:row-start-auto sm:col-span-4 sm:col-start-9 flex flex-col gap-4"
@@ -192,24 +185,26 @@
 				<p>
 					Realized I'm little more comfortable with structure and
 					logic than with open-ended creative expression. That
-					realization pushed me toward software rather than design.
+					realization <u class="decoration-black decoration-1"
+						>pushed me toward software</u
+					> rather than design.
 				</p>
 				<p>
-					And here I am now, doing mostly frontend, but slowly going
-					for fullstack.
+					But I never stopped caring about the end result looking
+					good.
 				</p>
 			</div>
 		</div>
 	</section>
 	<section class="pb-8 border-t pt-20 sm:pt-8">
-		<div class="grid grid-rows-12 sm:grid-rows-none sm:grid-cols-12 gap-20">
-			<div class="row-span-4 sm:row-span-auto sm:col-span-4">
+		<div class="grid grid-cols-1 sm:grid-cols-12 gap-20">
+			<div class="sm:col-span-4">
 				<h1 class="text-[45px] sm:text-start text-center">
 					The stack I live in
 				</h1>
 			</div>
 			<div
-				class="row-span-4 row-start-5 sm:row-span-auto sm:row-start-auto sm:col-span-4 sm:col-start-5 flex flex-col gap-4 sm:mt-0 -mt-32 sm:text-start text-center"
+				class="sm:col-span-4 sm:col-start-5 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-x-8 sm:gap-y-2 sm:text-start text-center"
 			>
 				<p>React</p>
 				<p>Redux</p>
@@ -217,34 +212,44 @@
 				<p>Tailwind CSS</p>
 				<p>Docker</p>
 			</div>
-			<div
-				class="row-span-4 row-start-9 sm:row-span-auto sm:row-start-auto sm:col-span-4 sm:col-start-9 flex flex-col gap-4"
-			></div>
+			<div class="sm:col-span-4 sm:col-start-9 flex flex-col gap-4"></div>
 		</div>
 	</section>
 	<section class="pb-8 border-t pt-20 sm:pt-8">
-		<div class="grid grid-cols-12 gap-20">
-			<div class="col-span-4">
-				<h1 class="text-[45px]">Side tools</h1>
+		<div class="grid grid-cols-1 sm:grid-cols-12 gap-20">
+			<div class="sm:col-span-4">
+				<h1 class="text-[45px] sm:text-start text-center">
+					Side tools
+				</h1>
 			</div>
-			<div class="col-span-4 col-start-5 flex items-center gap-4">
+			<div
+				class="sm:col-span-4 sm:col-start-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-8 sm:gap-y-2 sm:text-start text-center"
+			>
 				<p>Svelte</p>
 				<p>C++</p>
 				<p>Golang</p>
 			</div>
-			<div class="col-span-4 col-start-9"></div>
+			<div class="sm:col-span-4 sm:col-start-9"></div>
 		</div>
 	</section>
-	<div class="grid grid-rows-12 sm:grid-rows-none sm:grid-cols-12 gap-20">
-		<div class="col-span-4 flex gap-6 items-end">
+	<div
+		class="grid grid-cols-1 sm:grid-cols-12 gap-20 sm:gap-20 gap-y-16 mt-32 sm:mt-0"
+	>
+		<div
+			class="sm:col-span-4 flex flex-col sm:flex-row gap-6 items-center sm:items-end justify-center sm:justify-start sm:text-start text-center"
+		>
 			<p>Brno, Czech Republic</p>
 			<p>{email}</p>
 		</div>
-		<div class="col-span-5 col-start-5 flex gap-6 items-end justify-center">
+		<div
+			class="sm:col-span-5 sm:col-start-5 flex flex-col sm:flex-row gap-6 items-center sm:items-end justify-center sm:text-start text-center"
+		>
 			<p>© 2025 Miroslava Farkašová. All rights reserved.</p>
 			<p>Design by Barbora Kunzová</p>
 		</div>
-		<div class="col-span-3 col-start-12 flex gap-66 items-end">
+		<div
+			class="sm:col-span-3 sm:col-start-10 flex gap-6 items-end justify-center sm:justify-end"
+		>
 			<div
 				bind:this={spotlight2.containerRef}
 				class="relative"
@@ -284,7 +289,6 @@
 		pointer-events: none;
 		z-index: 9999;
 	}
-
 	::selection {
 		background: #14ed99;
 	}
