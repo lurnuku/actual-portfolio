@@ -75,7 +75,9 @@
 </svg>
 
 <div class="px-15 py-6 text-[18px] leading-tight">
-	<div class="flex gap-8 justify-end items-center text-[16px] mb-4">
+	<div
+		class="flex gap-6 sm:gap-8 flex-wrap sm:flex-nowrap justify-center sm:justify-end items-center text-[16px] mb-4"
+	>
 		<button type="button" onclick={() => window.open(github, '_blank')}>
 			GitHub
 		</button>
@@ -90,10 +92,12 @@
 			Contact me
 		</button>
 	</div>
-	<div class="mb-6">
-		<h1 class="text-[48px] -mb-6">Hello I am</h1>
+	<div class="mb-20 sm:mb-6 sm:mt-0 mt-20">
+		<h1 class="text-[48px] sm:-mb-6 sm:text-start text-center">
+			Hello I am
+		</h1>
 		<div class="flex gap-8 -ml-4 -mr-7 mt-2">
-			<div class="hidden md:block w-full">
+			<div class="hidden sm:block w-full">
 				<div
 					bind:this={spotlight1.containerRef}
 					class="relative"
@@ -119,7 +123,7 @@
 					/>
 				</div>
 			</div>
-			<div class="md:hidden flex flex-col gap-6 w-full">
+			<div class="sm:hidden flex flex-col gap-6 w-full">
 				<img
 					src="/src/lib/assets/images/first_name.svg"
 					alt="First Name"
@@ -130,12 +134,14 @@
 				/>
 			</div>
 		</div>
-		<h1 class="text-[48px] mt-2">React & TypeScript Developer</h1>
+		<h1 class="text-[48px] mt-20 sm:mt-2 sm:text-start text-center">
+			React & TypeScript Developer
+		</h1>
 	</div>
-	<section class="pb-8 border-t pt-8">
-		<div class="grid grid-cols-12 gap-20">
-			<div class="col-span-4">
-				<h1 class="text-[45px]">
+	<section class="pb-8 border-t pt-20 sm:pt-8">
+		<div class="grid grid-rows-12 sm:grid-rows-none sm:grid-cols-12 gap-20">
+			<div class="row-span-4 sm:row-span-auto sm:col-span-4">
+				<h1 class="text-[45px] sm:text-start text-center">
 					Currently working as a
 					<span
 						class="bg-[#407bff] rounded-lg px-2 text-white whitespace-nowrap"
@@ -145,7 +151,9 @@
 					developer at Mergado
 				</h1>
 			</div>
-			<div class="col-span-4 col-start-5 flex flex-col gap-4">
+			<div
+				class="row-span-4 row-start-5 sm:row-span-auto sm:row-start-auto sm:col-span-4 sm:col-start-5 flex flex-col gap-4 sm:mt-0 -mt-10"
+			>
 				<p>
 					<u class="decoration-black decoration-1">
 						Got 2+ years of professional experience
@@ -169,7 +177,9 @@
 				</p>
 				<p>Do love a good looking website though.</p>
 			</div>
-			<div class="col-span-4 col-start-9 flex flex-col gap-4">
+			<div
+				class="row-span-4 row-start-9 sm:row-span-auto sm:row-start-auto sm:col-span-4 sm:col-start-9 flex flex-col gap-4"
+			>
 				<p>
 					Got a
 					<u class="decoration-black decoration-1">Master's degree</u>
@@ -191,22 +201,28 @@
 			</div>
 		</div>
 	</section>
-	<section class="pb-8 border-t pt-8">
-		<div class="grid grid-cols-12 gap-20">
-			<div class="col-span-4">
-				<h1 class="text-[45px]">The stack I live in</h1>
+	<section class="pb-8 border-t pt-20 sm:pt-8">
+		<div class="grid grid-rows-12 sm:grid-rows-none sm:grid-cols-12 gap-20">
+			<div class="row-span-4 sm:row-span-auto sm:col-span-4">
+				<h1 class="text-[45px] sm:text-start text-center">
+					The stack I live in
+				</h1>
 			</div>
-			<div class="col-span-4 col-start-5 flex items-center gap-4">
+			<div
+				class="row-span-4 row-start-5 sm:row-span-auto sm:row-start-auto sm:col-span-4 sm:col-start-5 flex flex-col gap-4 sm:mt-0 -mt-32 sm:text-start text-center"
+			>
 				<p>React</p>
 				<p>Redux</p>
 				<p>TypeScript</p>
 				<p>Tailwind CSS</p>
 				<p>Docker</p>
 			</div>
-			<div class="col-span-4 col-start-9"></div>
+			<div
+				class="row-span-4 row-start-9 sm:row-span-auto sm:row-start-auto sm:col-span-4 sm:col-start-9 flex flex-col gap-4"
+			></div>
 		</div>
 	</section>
-	<section class="pb-8 border-t pt-8">
+	<section class="pb-8 border-t pt-20 sm:pt-8">
 		<div class="grid grid-cols-12 gap-20">
 			<div class="col-span-4">
 				<h1 class="text-[45px]">Side tools</h1>
@@ -219,7 +235,7 @@
 			<div class="col-span-4 col-start-9"></div>
 		</div>
 	</section>
-	<div class="grid grid-cols-12 gap-20">
+	<div class="grid grid-rows-12 sm:grid-rows-none sm:grid-cols-12 gap-20">
 		<div class="col-span-4 flex gap-6 items-end">
 			<p>Brno, Czech Republic</p>
 			<p>{email}</p>
